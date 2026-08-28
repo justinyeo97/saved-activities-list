@@ -15,7 +15,25 @@
       <a href="/page2.html">Other page</a>
     </nav>
     <main>
-      <h1>Activ8</h1>
+      <h1>Welcome</h1>
+
+      <div id = loginPage>
+        <form>
+          <div class="mb-3">
+            <label for="username" class="form-label">Email address</label>
+            <input type="text" class="form-control" id="username" aria-describedby="emailHelp">
+            <div id="username-help" class="form-text">We'll never share your username with anyone else.</div>
+          </div>
+          <div class="mb-3">
+            <label for="password" class="form-label">Password</label>
+            <input type="password" class="form-control" id="password">
+            <div id="password-help" class="form-text">
+              Your password must be 8-20 characters long, contain letters and numbers, and must not contain spaces, special characters, or emoji.
+            </div>
+          </div>
+          <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+      </div>
     </main>
   </body>
 </html>
