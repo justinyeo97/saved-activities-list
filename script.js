@@ -10,13 +10,19 @@ users.push(admin);
 console.log(users)
 
 function userLogin() {
+    console.log('Login Started')
     const emailInput = document.getElementById("username").value;
     const passInput = document.getElementById("password").value;
     const isValid = users.some(user => user.email === emailInput && user.password === passInput);
 
     if(isValid) {
-        window.location.href = 'dashboard.html'
+        window.location.href = 'dashboard.html';
+    } else {
+        alert(`Invalid email or password!`)
     }
 
    
 }   
+
+document.getElementById('loginButton').addEventListener('click', userLogin);
+
