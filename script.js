@@ -9,6 +9,37 @@ const admin = new User('yeojiaxing97@mail.com','sigmasigmaboi')
 users.push(admin);
 console.log(users)
 
+async function getAct() {
+    console.log('Get Activity Started')
+  try {
+    const response = await fetch('https://random-activity-sigmo.vercel.app/api/random');
+    const data = await response.json();
+    console.log(data);
+    document.getElementById('activity').innerHTML = `
+      <h2 class="card-header">Activity: ${data.activity}</h2>
+      <div class="card-body">
+        <p>Type: ${data.type}</p>
+      </div>
+      <div class="card-body">
+        <p>Participants: ${data.participants}</p>
+      </div>
+      <div class="card-body">  
+        <p>Price: ${data.price}</p>
+      </div>
+      <div class="card-body">
+        <p>Accessibility: ${data.accessibility}</p>
+      </div>
+
+      <button id="saveAct" type="button" class="btn btn-success">Save Activity</button>
+      
+    `;
+  } catch (error) {
+    console.error('Error fetching activity:', error);
+  }
+}
+
+document.getElementById('getAct').addEventListener('click', getAct);
+
 function userLogin() {
     console.log('Login Started')
     const emailInput = document.getElementById("username").value;
@@ -22,29 +53,9 @@ function userLogin() {
     }  
 }   
 
-async function getAct() {
-    console.log('Get Activity Started')
-  try {
-    const response = await fetch('https://random-activity-sigmo.vercel.app/api/random');
-    const data = await response.json();
-    console.log(data);
-    document.getElementById('activity').innerHTML = `
-      <h2>Activity: ${data.activity}</h2>
-      <p>Type: ${data.type}</p>
-      <p>Participants: ${data.participants}</p>
-      <p>Price: ${data.price}</p>
-      <p>Link: ${data.link}</p>
-      <p>Key: ${data.key}</p>
-      <p>Accessibility: ${data.accessibility}</p>
-      <p>Kid Friendly: ${data.kid_friendly}</p>
-    `;
-  } catch (error) {
-    console.error('Error fetching activity:', error);
-  }
-}
 
-document.addEventListener('DOMContentLoaded', () => {
-  document.getElementById('loginButton').addEventListener('click', userLogin);
-  document.getElementById('getAct').addEventListener('click', getAct);
-});
+
+document.getElementById('loginButton').addEventListener('click', userLogin);
+
+
 
