@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>Other page</title>
+    <title>Activiteet</title>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
     <link rel="stylesheet" href="styles.css" />
@@ -15,9 +15,18 @@
     </nav>
     <main>
       <h1>Dashboard</h1>
+  <div class = 'd-flex gap-4'>
+      <div>
       <button id="getAct" type="button" class="btn btn-outline-info" >Get Activity</button> 
-      <br>
-      <section class="card text-center border-success mb-3" id="activity"></section>
+      <section class="card text-left border-success mb-3" id="activity"></section>
+      </div>
+    <aside style="min-width: 250px;">
+      <div>
+      <h4>Saved Activities</h4>
+      <ul id="savedList" class="list-group"></ul>
+      </div>
+    </aside>
+  </div>
     </main>
     <script type="module" src="script.js"></script>
   </body>

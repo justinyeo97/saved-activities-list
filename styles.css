@@ -9,10 +9,13 @@ body {
   text-align: center;
   margin: 0;
   font-family: system-ui, sans-serif;
-  color: black;
-  background-color: white;
+  color: rgb(17, 85, 28);
+  background-color: rgb(209, 206, 43);
 }
 
+#getAct {
+  margin-bottom: 5px;
+}
 
 main {
   padding: 1rem;

@@ -11,18 +11,17 @@
   <body>
     <main>
       <h1>Welcome</h1>
-      <div id = "loginPage">
-        <form>
+      <div class="container my-5" id = "loginPage">
+        <form class="w-75 mx-auto border border-2 border-primary rounded p-4">
           <div class="mb-3">
-            <label for="username" class="form-label">Email address</label>
-            <input type="text" class="form-control" id="username" aria-describedby="emailHelp">
-            <div id="username-help" class="form-text">We'll never share your username with anyone else.</div>
+            <label for="email" class="form-label">Email Address</label>
+            <input type="email" class="form-control" id="email" aria-describedby="emailHelp">
           </div>
           <div class="mb-3">
             <label for="password" class="form-label">Password</label>
             <input type="password" class="form-control" id="password">
-            <div id="password-help" class="form-text">
-              Your password must be 8-20 characters long, contain letters and numbers, and must not contain spaces, special characters, or emoji.
+             <div id="disclaimer" class="form-text text-start">
+              We'll never share your username or password with anyone else.
             </div>
           </div>
           <button id="loginButton" type="button" class="btn btn-primary width-100">Login</button>
