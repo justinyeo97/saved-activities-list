@@ -25,6 +25,7 @@ function userLogin(event) {
     console.log('Login Started')
     const emailInput = document.getElementById("email").value.trim();
     const passInput = document.getElementById("password").value.trim();
+    let title = document.getElementById("title");
     const isValid = users.some(user => user.email === emailInput && user.password === passInput);
     const username = emailInput.split('@')[0];
 
@@ -38,6 +39,7 @@ function userLogin(event) {
     if (loggedIn === true) {
     document.getElementById("loginForm").style.display = "none";
     document.getElementById("dashboard").style.display = "block";
+    title.textContent = "Dashboard - Watudu";
 }   else {
     document.getElementById("loginForm").style.display = "block";
     document.getElementById("dashboard").style.display = "none";
@@ -54,10 +56,6 @@ if (getActBtn) {
   getActBtn.addEventListener('click', getAct);
 }
 
-function capitalizeFirstLetter(str) {
-  if (!str) return '';
-  return str.charAt(0).toUpperCase() + str.slice(1);
-}
 
 // Saved activities array
 const savedActivities = [];
@@ -70,7 +68,7 @@ function updateSavedList() {
     const li = document.createElement('li');
     li.className = 'list-group-item d-flex justify-content-between align-items-center';
 
-    li.textContent = capitalizeFirstLetter(activity);
+    li.textContent = activity;
 
     const deleteBtn = document.createElement('button');
     deleteBtn.style.padding = '2px 4px';
@@ -97,8 +95,8 @@ async function getAct() {
     const data = await response.json();
     console.log(data);
     document.getElementById('activity').innerHTML = `
-      <h2 class="card-header">${capitalizeFirstLetter(data.activity)}</h2>
-      <div class="card-info">
+      <h2 class="card-header bg-primary text-white text-start text-capitalize">${data.activity}</h2>
+      <div class="card-info text-capitalize text-start" style="padding: 10px;">
       <div class="list-group-item">
         <p>Type: ${data.type}</p>
       </div>
