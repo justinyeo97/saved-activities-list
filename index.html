@@ -9,7 +9,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="styles.css" />
-    <!-- As a heading -->
+    <!-- Logo with heading-->
     <header id="logo"class="brand justify-content-center text-align-center align-items-center">
       <div id="logo-container" class="d-flex align-items-center">
       <img class="logo-img img-fluid" src="w.png" alt="Watudu Logo" width="100" height="100">
@@ -20,11 +20,12 @@
   </head>
   <body>
     <main>
+  <!-- Login Form -->
       <div class="container my-5" id = "loginPage">
         <form id = "loginForm" class="w-75 mx-auto border border-2 rounded p-4">
           <div class="mb-3 text-start">
             <label for="username" class="form-label"><strong>Username</strong></label>
-            <input type="text" class="form-control" id="username" aria-describedby="emailHelp">
+            <input type="text" class="form-control" id="username" aria-describedby="userHelp">
           </div>
           <div class="mb-3 text-start">
             <label for="password" class="form-label"><strong>Password</strong></label>
@@ -37,6 +38,7 @@
         </form>
       </div>
 
+  <!-- Dashboard -->
     <div id="dashboard" class="container-fluid my-5">
   <div class="d-flex gap-4 align-items-start">
     
@@ -55,6 +57,11 @@
   </div>
 </div>
     </main>
+  <footer class="text-center mt-5">
+    <p>&copy; 2026 Watudu. All rights reserved.</p>
+    <!-- Logout button, initially hidden -->
+    <button id="logoutButton" type="button" class="btn btn-danger d-none">Logout</button>
+  </footer>
     <script type="module" src="script.js"></script>
   </body>
 </html>

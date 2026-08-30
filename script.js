@@ -10,13 +10,7 @@ users.push(admin);
 console.log(users)
 // Check if the user is logged in and show/hide the login form and dashboard accordingly
 let loggedIn = false;
-if (loggedIn === true) {
-    document.getElementById("loginForm").style.display = "none";
-    document.getElementById("dashboard").style.display = "block";
-}   else {
-    document.getElementById("loginForm").style.display = "block";
-    document.getElementById("dashboard").style.display = "none";
-}
+document.getElementById("dashboard").style.display = "none";
 
 
 function userLogin(event) {
@@ -37,7 +31,9 @@ function userLogin(event) {
     if (loggedIn === true) {
     document.getElementById("loginForm").style.display = "none";
     document.getElementById("dashboard").style.display = "block";
+    // Update the title and show the logout button
     title.textContent = "Dashboard - Watudu";
+    document.getElementById("logoutButton").classList.remove("d-none");
 }   else {
     document.getElementById("loginForm").style.display = "block";
     document.getElementById("dashboard").style.display = "none";
@@ -52,6 +48,20 @@ if (loginBtn) {
 const getActBtn = document.getElementById('getAct');
 if (getActBtn) {
   getActBtn.addEventListener('click', getAct);
+}
+// Add event listener for logout button
+const logoutBtn = document.getElementById('logoutButton');
+if (logoutBtn) {
+  logoutBtn.addEventListener('click', () => {
+    // Reset login status and show the login form
+    loggedIn = false;
+    document.getElementById("loginForm").style.display = "block";
+    document.getElementById("dashboard").style.display = "none";
+    document.getElementById("logoutButton").classList.add("d-none");
+    document.getElementById("username").value = "";
+    document.getElementById("password").value = "";
+    document.getElementById("title").textContent = "Login - Watudu";
+  });
 }
 
 
