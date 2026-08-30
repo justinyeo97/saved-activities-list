@@ -15,18 +15,18 @@
       <img class="logo-img img-fluid" src="w.png" alt="Watudu Logo" width="100" height="100">
       <h1 id="logo-text" class="text-glow">atudu</h1>
       </div>
-      <p>Find Your Perfect Activity</p>
+      <p><strong>Find Your Perfect Activity</strong></p>
     </header>
   </head>
   <body>
     <main>
       <div class="container my-5" id = "loginPage">
-        <form id = "loginForm" class="w-75 mx-auto border border-2 border-primary rounded p-4">
-          <div class="mb-3">
-            <label for="email" class="form-label"><strong>Email Address</strong></label>
-            <input type="email" class="form-control" id="email" aria-describedby="emailHelp">
+        <form id = "loginForm" class="w-75 mx-auto border border-2 rounded p-4">
+          <div class="mb-3 text-start">
+            <label for="username" class="form-label"><strong>Username</strong></label>
+            <input type="text" class="form-control" id="username" aria-describedby="emailHelp">
           </div>
-          <div class="mb-3">
+          <div class="mb-3 text-start">
             <label for="password" class="form-label"><strong>Password</strong></label>
             <input type="password" class="form-control" id="password">
              <div id="disclaimer" class="form-text text-start">
@@ -42,12 +42,12 @@
     
     <!-- Left column: button above activity card -->
     <div class="d-flex flex-column">
-      <button id="getAct" type="button" class="btn btn-outline-info mb-3">Get Activity</button>
+      <button id="getAct" type="button" class="btn btn-warning mb-3">Feeling Lucky?</button>
       <section class="card text-left border-success d-none mb-3" id="activity" style="min-width: 500px; max-width: 500px;"></section>
     </div>
   <aside style="min-width: 250px; max-width: 250px;">
     <div style="display: flex; flex-direction: column;">
-      <h4 style="margin-bottom: 0.5rem; border-color: black;" class="text-wrap text-decoration-underline">Saved Activities</h4>
+      <h4 style="margin-bottom: 0.5rem; border-color: black;" class="text-decoration-underline"><strong>Saved Activities</strong></h4>
       <ul id="savedList" class="list-group text-capitalize" style="margin-top: 20px; padding: 0; text-align: left;"></ul>
     </div>
   </aside>

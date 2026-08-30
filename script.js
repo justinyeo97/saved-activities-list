@@ -1,14 +1,15 @@
 class User {
-    constructor(email,password) {
-        this.email = email;
+    constructor(username,password) {
+        this.username = username;
         this.password = password;
     }
 }
 const users = []
-const admin = new User('admin@mail.com','admin');
+const admin = new User('admin','1234');
 users.push(admin);
 console.log(users)
-let loggedIn = true;
+// Check if the user is logged in and show/hide the login form and dashboard accordingly
+let loggedIn = false;
 if (loggedIn === true) {
     document.getElementById("loginForm").style.display = "none";
     document.getElementById("dashboard").style.display = "block";
@@ -17,25 +18,22 @@ if (loggedIn === true) {
     document.getElementById("dashboard").style.display = "none";
 }
 
-//event listeners
-
 
 function userLogin(event) {
     event.preventDefault();
     console.log('Login Started')
-    const emailInput = document.getElementById("email").value.trim();
+    const usernameInput = document.getElementById("username").value.trim();
     const passInput = document.getElementById("password").value.trim();
     let title = document.getElementById("title");
-    const isValid = users.some(user => user.email === emailInput && user.password === passInput);
-    const username = emailInput.split('@')[0];
+    const isValid = users.some(user => user.username === usernameInput && user.password === passInput);
 
     if(isValid) {
-        alert(`Welcome back, ${username}!`);
+        alert(`Welcome back, ${usernameInput}!`);
         loggedIn = true;
     } else {
-        alert(`Invalid email or password!`)
+        alert(`Invalid username or password!`)
     };
-    
+    // Show or hide the login form and dashboard based on the login status
     if (loggedIn === true) {
     document.getElementById("loginForm").style.display = "none";
     document.getElementById("dashboard").style.display = "block";
@@ -45,7 +43,7 @@ function userLogin(event) {
     document.getElementById("dashboard").style.display = "none";
 }
 }
-
+// Add event listeners for login and get activity buttons
 const loginBtn = document.getElementById("loginButton");
 if (loginBtn) {
   loginBtn.addEventListener('click', userLogin);
@@ -69,7 +67,7 @@ function updateSavedList() {
     li.className = 'list-group-item d-flex justify-content-between align-items-center';
 
     li.textContent = activity;
-
+//added delete button to each saved activity
     const deleteBtn = document.createElement('button');
     deleteBtn.style.padding = '2px 4px';
     deleteBtn.style.fontSize = '0.7rem';
@@ -87,7 +85,7 @@ function updateSavedList() {
     savedList.appendChild(li);
   });
 }
-
+// Function to fetch a random activity from the API
 async function getAct() {
     console.log('Get Activity Started')
   try {
@@ -96,24 +94,25 @@ async function getAct() {
     console.log(data);
     const activityCard = document.getElementById("activity");
     activityCard.classList.remove("d-none");
+    // Display the activity details in the card + capitalize the first letter of each word in the activity
     document.getElementById('activity').innerHTML = `
       <h2 class="card-header bg-primary text-white text-start text-capitalize">${data.activity}</h2>
       <div class="card-info text-capitalize text-start" style="padding: 10px;">
       <div class="list-group-item d-flex flex-row align-items-center">
         <img src="https://img.icons8.com/?size=100&id=OgA6xS298O9C&format=png&color=000000" alt="Activity Icon" style="width: 20px; height: 20px; margin-right: 5px;">
-        <p style="margin-left: 10px;">Type: ${data.type}</p>
+        <p style="margin-left: 10px;"><strong>Type:</strong> ${data.type}</p>
       </div>
       <div class="list-group-item d-flex flex-row align-items-center">
         <img src="https://img.icons8.com/?size=100&id=3FGIOtDCfIJI&format=png&color=000000" alt="Participants Icon" style="width: 20px; height: 20px; margin-right: 5px;">
-        <p style="margin-left: 10px;">Participants: ${data.participants}</p>
+        <p style="margin-left: 10px;"><strong>Participants:</strong> ${data.participants}</p>
       </div>
       <div class="list-group-item d-flex flex-row align-items-center">
         <img src="https://img.icons8.com/?size=100&id=54uPqIDkFzRx&format=png&color=000000" alt="Price Icon" style="width: 20px; height: 20px; margin-right: 5px;">
-        <p style="margin-left: 10px;">Price: ${data.price}</p>
+        <p style="margin-left: 10px;"><strong>Price:</strong> ${data.price}</p>
       </div>
       <div class="list-group-item d-flex flex-row align-items-center">
         <img src="https://img.icons8.com/?size=100&id=EH6XRlqQIHVg&format=png&color=000000" alt="Accessibility Icon" style="width: 20px; height: 20px; margin-right: 5px;">
-        <p style="margin-left: 10px;">Accessibility: ${data.accessibility}</p>
+        <p style="margin-left: 10px;"><strong>Accessibility:</strong> ${data.accessibility}</p>
       </div>
       </div>
 

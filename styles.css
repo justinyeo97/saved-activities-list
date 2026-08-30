@@ -5,14 +5,18 @@
 }
 
 body {
+  min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   text-align: center;
   margin: 0;
   font-family: 'Cormorant Garamond', serif;
-  color: rgb(83, 172, 98);
-  background: radial-gradient(circle, rgba(255,255,255,0.2), rgba(17,110,136,1)), rgb(17, 110, 136);
+  color: rgb(10, 39, 15);
+  background: radial-gradient(circle, rgba(241, 241, 241, 0.863), rgba(17,110,136,1)), rgb(17, 110, 136);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 
 
@@ -33,12 +37,21 @@ h1 {
   font-size: 1.5rem;
 }
 
+h4 {
+  display: inline-block;
+  padding: 0 8px; 
+  border-radius: 4px; 
+  text-shadow:
+    0 0 5px rgba(218, 223, 214, 0.7),
+    0 0 10px rgba(233, 236, 230, 0.5);
+}
+
 .card-info {
   background-color: rgba(223, 152, 86, 0.322);
 }
 
 #logo-container{
-  filter: drop-shadow(0px 0px 15px  rgba(97, 167, 40, 0.8));
+  filter: drop-shadow(0px 0px 15px  rgba(221, 252, 196, 0.8));
   transition: filter 0.3s ease;
 }
 
