@@ -10,12 +10,18 @@ body {
   margin: 0;
   font-family: system-ui, sans-serif;
   color: rgb(17, 85, 28);
-  background-color: rgb(209, 206, 43);
+  background-color: rgb(56, 165, 168);
 }
 
-#getAct {
+
+
+#getAct{
   margin-bottom: 5px;
 }
+
+ #savedTitle {
+  margin-bottom: 10px
+ }
 
 main {
   padding: 1rem;
