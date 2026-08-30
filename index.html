@@ -33,17 +33,20 @@
       </div>
 
     <div id="dashboard" class="container my-5">
-      <div class = 'd-flex gap-4'>
-      <div>
-      <button id="getAct" type="button" class="btn btn-outline-info" >Get Activity</button> 
-      <section class="card text-left border-success mb-3" id="activity"></section>
-      </div>
-    <aside style="min-width: 250px;">
-      <div>
-      <h4 id = "savedTitle">Saved Activities</h4>
-      <ul id="savedList" class="list-group"></ul>
-      </div>
-    </aside>
+  <div class="d-flex gap-4 align-items-start">
+    
+    <!-- Left column: button above activity card -->
+    <div class="d-flex flex-column">
+      <button id="getAct" type="button" class="btn btn-outline-info mb-3">Get Activity</button>
+      <section class="card text-left border-success mb-3" id="activity" style="min-width: 300px;"></section>
+    </div>
+  <aside style="min-width: 250px;">
+    <div style="display: flex; flex-direction: column;">
+      <h4 style="margin-bottom: 0.5rem;">Saved Activities</h4>
+      <ul id="savedList" class="list-group" style="margin-top: 20px; padding: 0; text-align: left;"></ul>
+    </div>
+  </aside>
+
   </div>
 </div>
     </main>

@@ -73,6 +73,10 @@ function updateSavedList() {
     li.textContent = capitalizeFirstLetter(activity);
 
     const deleteBtn = document.createElement('button');
+    deleteBtn.style.padding = '2px 4px';
+    deleteBtn.style.fontSize = '0.7rem';
+    deleteBtn.style.lineHeight = '1';
+    deleteBtn.style.marginLeft = '5px';
     deleteBtn.className = 'btn btn-danger btn-sm';
     deleteBtn.textContent = 'X';
 
@@ -95,16 +99,16 @@ async function getAct() {
     document.getElementById('activity').innerHTML = `
       <h2 class="card-header">${capitalizeFirstLetter(data.activity)}</h2>
       <div class="card-info">
-      <div class="card">
+      <div class="list-group-item">
         <p>Type: ${data.type}</p>
       </div>
-      <div class="card">
+      <div class="list-group-item">
         <p>Participants: ${data.participants}</p>
       </div>
-      <div class="card">
+      <div class="list-group-item">
         <p>Price: ${data.price}</p>
       </div>
-      <div class="card">
+      <div class="list-group-item">
         <p>Accessibility: ${data.accessibility}</p>
       </div>
       </div>
