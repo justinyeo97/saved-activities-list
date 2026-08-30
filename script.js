@@ -8,8 +8,14 @@ const users = []
 const admin = new User('admin@mail.com','admin');
 users.push(admin);
 console.log(users)
-let loggedIn = false;
-document.getElementById("dashboard").style.display = "none";
+let loggedIn = true;
+if (loggedIn === true) {
+    document.getElementById("loginForm").style.display = "none";
+    document.getElementById("dashboard").style.display = "block";
+}   else {
+    document.getElementById("loginForm").style.display = "block";
+    document.getElementById("dashboard").style.display = "none";
+}
 
 //event listeners
 
@@ -48,16 +54,34 @@ if (getActBtn) {
   getActBtn.addEventListener('click', getAct);
 }
 
+function capitalizeFirstLetter(str) {
+  if (!str) return '';
+  return str.charAt(0).toUpperCase() + str.slice(1);
+}
+
 // Saved activities array
 const savedActivities = [];
 // Function to update the saved activities list in the DOM
-  function updateSavedList() {
+function updateSavedList() {
   const savedList = document.getElementById('savedList');
-  savedList.innerHTML = ''; // Clear current list
-  savedActivities.forEach(activity => {
+  savedList.innerHTML = '';
+
+  savedActivities.forEach((activity, index) => {
     const li = document.createElement('li');
-    li.className = 'list-group-item';
-    li.textContent = activity;
+    li.className = 'list-group-item d-flex justify-content-between align-items-center';
+
+    li.textContent = capitalizeFirstLetter(activity);
+
+    const deleteBtn = document.createElement('button');
+    deleteBtn.className = 'btn btn-danger btn-sm';
+    deleteBtn.textContent = 'X';
+
+    deleteBtn.addEventListener('click', () => {
+      savedActivities.splice(index, 1);
+      updateSavedList();
+    });
+
+    li.appendChild(deleteBtn);
     savedList.appendChild(li);
   });
 }
@@ -69,7 +93,7 @@ async function getAct() {
     const data = await response.json();
     console.log(data);
     document.getElementById('activity').innerHTML = `
-      <h2 class="card-header">${data.activity}</h2>
+      <h2 class="card-header">${capitalizeFirstLetter(data.activity)}</h2>
       <div class="card-info">
       <div class="card">
         <p>Type: ${data.type}</p>
@@ -104,7 +128,6 @@ const saveActBtn = document.getElementById('saveAct');
   }
 
 }
-
 
 
 
