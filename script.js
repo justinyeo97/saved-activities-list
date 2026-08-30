@@ -142,6 +142,7 @@ const saveActBtn = document.getElementById('saveAct');
     });
   } catch (error) {
     console.error('Error fetching activity:', error);
+    alert('Failed to fetch activity. Please try again later.');
   }
 
 }
