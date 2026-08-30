@@ -2,13 +2,18 @@
 <img src="w.png" alt="Logo" width="200"  />
 </div>
 
+<p align="center">
+  ~Watudu~
+</p>
+
 ---
+
 
 ![preview](preview.png)
 
 Summary
 - 
-A simple app for when you're thinking of stuff to do but nothing is coming to mind. Watudu will throw random activity suggestions to you and you can save your favorites in a list! No more wondering what is there to do.
+Watudu is a simple tool for when you're thinking of stuff to do but nothing is coming to mind. It will throw random activity suggestions to you and you can save your favorites in a list! No more wondering what is there to do.
 
 
 Features
