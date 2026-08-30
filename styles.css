@@ -1,3 +1,5 @@
+@import url('https://googleapis.com');
+
 * {
   box-sizing: border-box;
 }
@@ -8,9 +10,9 @@ body {
   align-items: center;
   text-align: center;
   margin: 0;
-  font-family: system-ui, sans-serif;
-  color: rgb(17, 85, 28);
-  background-color: rgb(147, 230, 255);
+  font-family: 'Cormorant Garamond', serif;
+  color: rgb(83, 172, 98);
+  background: radial-gradient(circle, rgba(255,255,255,0.2), rgba(17,110,136,1)), rgb(17, 110, 136);
 }
 
 
@@ -31,3 +33,20 @@ h1 {
   font-size: 1.5rem;
 }
 
+.card-info {
+  background-color: rgba(223, 152, 86, 0.322);
+}
+
+#logo-container{
+  filter: drop-shadow(0px 0px 15px  rgba(97, 167, 40, 0.8));
+  transition: filter 0.3s ease;
+}
+
+#logo-container:hover {
+  filter: drop-shadow(0px 0px 25px  rgba(97, 167, 40, 1));
+}
+
+#logo-text {
+  color: black;
+  font-family: 'Cormorant Garamond', serif;
+}

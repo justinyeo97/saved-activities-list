@@ -94,20 +94,26 @@ async function getAct() {
     const response = await fetch('https://random-activity-sigmo.vercel.app/api/random');
     const data = await response.json();
     console.log(data);
+    const activityCard = document.getElementById("activity");
+    activityCard.classList.remove("d-none");
     document.getElementById('activity').innerHTML = `
       <h2 class="card-header bg-primary text-white text-start text-capitalize">${data.activity}</h2>
       <div class="card-info text-capitalize text-start" style="padding: 10px;">
-      <div class="list-group-item">
-        <p>Type: ${data.type}</p>
+      <div class="list-group-item d-flex flex-row align-items-center">
+        <img src="https://img.icons8.com/?size=100&id=OgA6xS298O9C&format=png&color=000000" alt="Activity Icon" style="width: 20px; height: 20px; margin-right: 5px;">
+        <p style="margin-left: 10px;">Type: ${data.type}</p>
       </div>
-      <div class="list-group-item">
-        <p>Participants: ${data.participants}</p>
+      <div class="list-group-item d-flex flex-row align-items-center">
+        <img src="https://img.icons8.com/?size=100&id=3FGIOtDCfIJI&format=png&color=000000" alt="Participants Icon" style="width: 20px; height: 20px; margin-right: 5px;">
+        <p style="margin-left: 10px;">Participants: ${data.participants}</p>
       </div>
-      <div class="list-group-item">
-        <p>Price: ${data.price}</p>
+      <div class="list-group-item d-flex flex-row align-items-center">
+        <img src="https://img.icons8.com/?size=100&id=54uPqIDkFzRx&format=png&color=000000" alt="Price Icon" style="width: 20px; height: 20px; margin-right: 5px;">
+        <p style="margin-left: 10px;">Price: ${data.price}</p>
       </div>
-      <div class="list-group-item">
-        <p>Accessibility: ${data.accessibility}</p>
+      <div class="list-group-item d-flex flex-row align-items-center">
+        <img src="https://img.icons8.com/?size=100&id=EH6XRlqQIHVg&format=png&color=000000" alt="Accessibility Icon" style="width: 20px; height: 20px; margin-right: 5px;">
+        <p style="margin-left: 10px;">Accessibility: ${data.accessibility}</p>
       </div>
       </div>
 
